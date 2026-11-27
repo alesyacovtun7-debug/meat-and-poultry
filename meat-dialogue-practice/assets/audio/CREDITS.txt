@@ -1,0 +1,4 @@
+GURU Audio Credits
+Speech: locally synthesized with Kokoro-82M (Apache-2.0 model).
+https://huggingface.co/hexgrad/Kokoro-82M
+SFX: procedural synthesis from the GURU audio player.

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14243e">
+  <meta name="description" content="Practise taking lunch orders in English with two interactive cabin service scenarios.">
+  <title>Meat Dialogue Practice</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="dialogue.js" defer></script>
+  <script src="assets/audio/sources.js" defer></script>
+  <script src="audio.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#game">Skip to dialogue</a>
+  <header class="site-header">
+    <div class="shell topbar">
+      <div class="brand">
+        <img class="brand-logo" src="assets/logo.png" width="109" height="109" alt="Chicken or Fish">
+        <span class="brand-subtitle">Inflight English</span>
+      </div>
+      <div class="top-actions">
+        <button class="help-button" type="button" id="sound-toggle" aria-label="Sound" aria-pressed="true"><span class="speaker" aria-hidden="true"></span><span id="sound-label">Sound on</span></button>
+        <button class="help-button" type="button" id="open-help"><span class="help-icon" aria-hidden="true">?</span>How to play</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell" id="main">
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-picture" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="hero-level">English <span>A2–B1</span></span>
+        <h1 id="title">Meat Dialogue Practice</h1>
+        <p>Take a lunch order as cabin crew.<br class="hero-break"> Then switch roles and order as the passenger.</p>
+      </div>
+    </section>
+
+    <section class="scenario-picker" aria-labelledby="scenario-title">
+      <h2 id="scenario-title">Scenario</h2>
+      <div class="scenario-buttons" role="group" aria-labelledby="scenario-title">
+        <button class="scenario-button" type="button" data-scenario="standard" aria-pressed="true"><span class="cloche" aria-hidden="true"></span>Regular order</button>
+        <button class="scenario-button" type="button" data-scenario="soldOut" aria-pressed="false"><span class="swap-symbol" aria-hidden="true">⇄</span>Sold out</button>
+      </div>
+    </section>
+
+    <div class="game-layout" id="game" tabindex="-1">
+      <section class="play-card" aria-label="Cabin dialogue">
+        <header class="game-header" id="game-header"></header>
+        <div id="play"></div>
+      </section>
+      <aside class="menu-card" id="menu" aria-label="Onboard menu" tabindex="-1"></aside>
+    </div>
+    <noscript><p>Enable JavaScript in your browser to play.</p></noscript>
+  </main>
+
+  <footer class="shell site-footer">
+    <span>English practice</span>
+    <a class="credits-link" href="assets/audio/CREDITS.txt" target="_blank" rel="noopener">Audio credits</a>
+    <button type="button" id="restart" class="restart-button" hidden><span aria-hidden="true">↻</span> Restart scenario</button>
+  </footer>
+
+  <dialog id="help" aria-labelledby="help-title">
+    <div class="help-top"><h2 id="help-title">How to play</h2><button id="close-help" class="close-button" type="button" aria-label="Close">×</button></div>
+    <ol>
+      <li>Choose a scenario. Select Play to hear a line or Replay to hear it again from the start. Use Earlier lines to listen back.</li>
+      <li>Choose a reply. If it fits, select Next. Check the menu or open a hint if you need help.</li>
+      <li>Confirm the first order, then switch roles. In the second round, you place the order as the passenger.</li>
+    </ol>
+    <button class="primary" type="button" id="dismiss-help">Back to dialogue <span aria-hidden="true">→</span></button>
+  </dialog>
+  <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+  <audio id="voice" preload="none" hidden></audio>
+</body>
+</html>
